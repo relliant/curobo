@@ -110,7 +110,7 @@ Repository = "https://github.com/NVlabs/curobo"
 include-package-data = true
 
 [tool.setuptools.packages.find]
-exclude = ["tests"]
+exclude = ["tests*", "build*", "dist*"]
 
 [tool.setuptools.package-data]
 # Include kernel source files for cuda.core runtime compilation
@@ -234,6 +234,8 @@ extend-exclude = [
 # Add any specific rule configurations here as needed
 
 [tool.uv]
+link-mode = "hardlink"
+
 conflicts = [
   [
     { extra = "cu12" },
